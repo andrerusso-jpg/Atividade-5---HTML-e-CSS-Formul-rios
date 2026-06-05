@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg, #1b1b1b, #282829);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .container{
+            background:white;
+            width:100%;
+            max-width:600px;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+            color:#224abe;
+        }
+
+        .campo{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input,
+        select,
+        textarea{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            transition:0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus{
+            border-color:#4e73df;
+            outline:none;
+            box-shadow:0 0 5px rgba(78,115,223,0.5);
+        }
+
+        .opcoes{
+            margin-top:5px;
+        }
+
+        .opcoes label{
+            display:inline;
+            font-weight:normal;
+            margin-left:5px;
+        }
+
+         .botoes{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:10px;
+            margin-top:20px;
+        }
+
+         .botoes button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.3s;
+    }
+
+        .enviar{
+            background:#28a745;
+            color:white;
+        }
+
+        .limpar{
+            background:#dc3545;
+            color:white;
+        }
+
+        .enviar:hover{
+            background:#218838;
+        }
+
+        .limpar:hover{
+            background:#c82333;
+        }
+
+        @media(max-width:600px){
+            .botoes{
+                flex-direction:column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Formulário de Cadastro</h1>
+
+        <form>
+
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <div class="campo">
+                <label for="data">Data de Nascimento:</label>
+                <input type="date" id="data" name="data">
+            </div>
+
+            <div class="campo">
+                <label for="curso">Curso:</label>
+                <select id="curso" name="curso">
+                    <option value="">Selecione um curso</option>
+                    <option>Análise e Desenvolvimento de Sistemas</option>
+                    <option>Ciência da Computação</option>
+                    <option>Engenharia de Software</option>
+                    <option>Administração</option>
+                    <option>Direito</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Sexo:</label>
+
+                <div class="opcoes">
+                    <input type="radio" id="masculino" name="sexo" value="Masculino">
+                    <label for="masculino">Masculino</label>
+                </div>
+
+                <div class="opcoes">
+                    <input type="radio" id="feminino" name="sexo" value="Feminino">
+                    <label for="feminino">Feminino</label>
+                </div>
+
+                <div class="opcoes">
+                    <input type="radio" id="outro" name="sexo" value="Outro">
+                    <label for="outro">Outro</label>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Interesses:</label>
+
+                <div class="opcoes">
+                    <input type="checkbox" id="tecnologia" name="interesses">
+                    <label for="tecnologia">Tecnologia</label>
+                </div>
+
+                <div class="opcoes">
+                    <input type="checkbox" id="esportes" name="interesses">
+                    <label for="esportes">Esportes</label>
+                </div>
+
+                <div class="opcoes">
+                    <input type="checkbox" id="musica" name="interesses">
+                    <label for="musica">Música</label>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="comentarios">Comentários:</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="foto">Upload de Foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+
+            <div class="botoes">
+               <button type="submit" class="enviar">Enviar</button>
+               <button type="reset" class="limpar">Limpar</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
